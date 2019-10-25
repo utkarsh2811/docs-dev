@@ -35,10 +35,10 @@ $lang-select-bg: #1E2224 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #ffffff !default;
-$aside-notice-bg: rgba(52,152,219,.1) !default;
-$aside-warning-bg: rgba(219, 46, 57, 0.1) !default;
-$aside-success-bg: rgba(52, 219, 73, 0.1) !default;
-$search-notice-bg: #c97a7e !default;
+$aside-notice-bg: rgba(52,152,219,.15) !default;
+$aside-warning-bg: rgba(219, 46, 57, 0.15) !default;
+$aside-success-bg: rgba(52, 219, 73, 0.15) !default;
+$search-notice-bg: rgba(219, 46, 57, 0.15) !default;
 
 
 // TEXT COLORS
