@@ -351,8 +351,8 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    //border-top: 1px solid #ccc;
+    //border-bottom: 1px solid #ccc;
     background-color: #fdfdfd;
   }
 
@@ -452,7 +452,7 @@ html, body {
     background-color: rgba(0,0,0,0.05);
     padding: 3px;
     border-radius: 3px;
-    @extend %break-words;
+    word-break: break-word;
     @extend %code-font;
   }
 
