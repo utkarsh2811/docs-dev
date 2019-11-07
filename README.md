@@ -59,6 +59,13 @@ vagrant up
 
 # to build for production
 bundle exec middleman build --clean
+
+# aws deployment
+
+install aws cli https://aws.amazon.com/cli/
+aws configure
+aws s3 sync build s3://dev.intempt.com
+
 ```
 
 You can now see the docs at http://localhost:4567. Whoa! That was fast!
