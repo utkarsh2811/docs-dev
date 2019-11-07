@@ -12,6 +12,7 @@ includes:
   - collections
   - collection-data
   - errors
+  - main-concepts
 
 search: true
 ---

@@ -56,6 +56,9 @@ bundle exec middleman server
 
 # OR run this to run with vagrant
 vagrant up
+
+# to build for production
+bundle exec middleman build --clean
 ```
 
 You can now see the docs at http://localhost:4567. Whoa! That was fast!
