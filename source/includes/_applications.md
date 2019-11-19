@@ -1,6 +1,6 @@
 # Applications
 
-Intempt Application represents integration of Intempt with one of supported platforms (Shopify, HubSpot, POS system, etc.) or client's website/mobile app.
+Intempt Application represents integration of Intempt with one of supported platforms (Shopify, HubSpot, Magento, POS system, etc.) or client's website/mobile app.
 
 ## Get All Applications
 
