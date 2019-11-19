@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bundle exec middleman build --verbose --clean
+bundle exec middleman build --verbose --clean --build-dir=/usr/src/app/build
 
 aws2 s3 sync build s3://dev.intempt.com
 
