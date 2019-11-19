@@ -1,0 +1,16 @@
+FROM ruby:2.6.5
+
+RUN apt-get update && apt-get install -y nodejs \
+&& apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY ./Gemfile /usr/src/app/
+COPY ./Gemfile.lock /usr/src/app/
+WORKDIR /usr/src/app
+RUN gem install bundler
+RUN bundle install
+RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+COPY deploy-s3.sh /deploy-s3.sh
+COPY . /usr/src/app
+

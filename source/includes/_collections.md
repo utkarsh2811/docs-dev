@@ -1,6 +1,8 @@
 # Collections
 
-Collections define schemas for events or data of a certain type.
+Collections describe schemas for events or data of a certain type, while collection data items represent cpecific pieces of data in that collection.
+
+To put that in relational terms, collections are tables that describe columns (types,constraints, etc.), and collection data items are rows of values for those columns.
 
 For example, collections can be created for:
 
@@ -9,6 +11,8 @@ For example, collections can be created for:
 - Certain user actions on a website
 
 After creating a collection, use `collection data` endpoints to store and retrieve actual data items.
+
+Intempt platform collection schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html), and should include a custom `identifier` property, which defines relation with a profile collection.
 
 ## Get All Collections
 
@@ -110,9 +114,13 @@ This call will return an array of collection objects that contain `id`, `appId`,
 
 `appId` property shows to which Application this collection belongs.
 
-`profile` property shows whether collection is a user profile.
+`profile` property shows whether collection is a user profile collection. 
 
-`event` property shows whether collection is an event. Key difference of `event` type collection is that it has many-to-one relation with a profile. If `event` is true, having a relation with a profile collection is necessary.
+Profile collection primary `id` is used as a `profile id` across whole application. Profile collection requires also a `user id`, so we can link profile to a user. Only one profile collection is allowed per application.
+
+`event` property shows whether collection is an event collection. Key difference of `event` type collection is that it has many-to-one relation with a profile.
+
+Event collection is required to have `profile id`. Events not belonging to any profile are not supported.
 
 In the `_links` object 
 `self` points to the collection itself,

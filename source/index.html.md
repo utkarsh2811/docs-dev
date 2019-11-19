@@ -11,6 +11,7 @@ includes:
   - applications
   - collections
   - collection-data
+  - examples
   - errors
   - main-concepts
 
@@ -49,6 +50,9 @@ Sending request to the root URL will return API details.
 `GET https://api.intempt.com`
 
 <aside class="success">Most calls return <code>'_links'</code> object containing URLs to related entities</aside>
+
+<aside class="notice">Prerequisite: Intempt platform uses Apache Avro Schema, which you can get familiar with <a href="https://avro.apache.org/docs/current/spec.html">here</a></aside>
+
 
 
 # Authentication

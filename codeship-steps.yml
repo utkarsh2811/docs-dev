@@ -1,0 +1,6 @@
+- type: serial
+  steps:
+    - service: build-service
+      tag: master
+      name: build_and_deploy_to_s3
+      command: /deploy-s3.sh

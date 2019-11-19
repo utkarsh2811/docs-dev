@@ -1,0 +1,6 @@
+build-service:
+  build:
+    image: intempt/docs-api-build
+    dockerfile_path: Dockerfile-build
+  encrypted_env_file:
+    - env.encrypted
