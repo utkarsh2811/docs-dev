@@ -52,18 +52,6 @@ Identifiers are resolved by `name`, so the `name` is unique across application. 
 
 Next we'll have a look into relations between collections. For a better example, let's have one collection first and then split it into two using relations.
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 
 
 
@@ -80,23 +68,7 @@ Next we'll have a look into relations between collections. For a better example,
 
 ```
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+<div class="spacer"></div>
 
 Both schema definition and an actual item should be pretty clear. We have a movie with a name and list of characters. And `id` field is used as item identifier. The name of collection identifier will be "movie.id".
 
@@ -139,35 +111,9 @@ Now suppose we want to move characters out of the movie item into its own collec
 {"id": 2, name: "Joker"}
 ```
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+<div class="spacer"></div>
 
 So now we have two different collections with two different identifiers: `movie.id` and `character.id`. But how do we know characters are from this particular movie?
-
-&nbsp;
 
 > Collection "character":
 
@@ -209,27 +155,14 @@ We need a `movie id` not only in movie collection but also inside `character` co
   }
 }
 ```
-&nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+<div class="spacer"></div>
 
 This time however, this is not a primary identifier(only one primary for collection is allowed). Additionally, it needs to point to `movie primary id` by using a `relation`:
 
 Now identifier `movieId(character.movieId)` is pointing to `movie.id` and relation is named "characters"(the same way it was when characters field was an array). Note that `collection + name` give full identifier name and it should match the name of `identifier` we want to point to.
 
-&nbsp;
-
-&nbsp;
-
-Additionally we have few a special collection types which enforce more requirements: `profile` and `event`. Those are created by setting corresponding flags on collections.
+Additionally, we have few a special collection types which enforce more requirements: `profile` and `event`. Those are created by setting corresponding flags on collections.
 
 Profile collection `primary id` is used as a `profile id` across whole application. Profile collection requires also a `user id`, so we can link profile to a user. Only one profile collection allowed per application.
 
