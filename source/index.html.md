@@ -61,7 +61,7 @@ Intempt uses access tokens to authorize API access. To get hold of a token, you 
 
 [Login here](https://app.intempt.com/).
 
-Or [create a new account here](https://app.intempt.com/signup).
+Or [create a new account here](https://app.intempt.com).
 
 Navigate to the edit view of an existing Application or create a new one.
 
