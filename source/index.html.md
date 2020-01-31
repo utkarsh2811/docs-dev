@@ -59,7 +59,7 @@ Sending request to the root URL will return API details.
 
 Intempt uses access tokens to authorize API access. To get hold of a token, you will first need to login to Intempt Console.
 
-[Login here](https://app.intempt.com/).
+[Login here](https://app.intempt.com/login).
 
 Or [create a new account here](https://app.intempt.com).
 
