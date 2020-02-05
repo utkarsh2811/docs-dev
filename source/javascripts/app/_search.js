@@ -4,6 +4,7 @@
 ;(function () {
   'use strict';
 
+
   var content, searchResults;
   var highlightOpts = { element: 'span', className: 'search-highlight' };
   var searchDelay = 0;
