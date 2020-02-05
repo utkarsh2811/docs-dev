@@ -8,9 +8,9 @@ COPY ./Gemfile.lock /usr/src/app/
 WORKDIR /usr/src/app
 RUN gem install bundler
 RUN bundle install
-RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN ./aws/install
+RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+RUN unzip awscli-bundle.zip
+RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 COPY deploy-s3.sh /deploy-s3.sh
 COPY . /usr/src/app
 
