@@ -57,18 +57,18 @@ Sending request to the root URL will return API details.
 
 # Authentication
 
-Intempt uses access tokens to authorize API access. To get hold of a token, you will first need to login to Intempt Console.
+Intempt uses api keys to authorize API access. To get hold of an api key, you will first need to login to Intempt Console.
 
 [Login here](https://app.intempt.com/login).
 
 Or [create a new account here](https://app.intempt.com).
 
-Navigate to the edit view of an existing Application or create a new one.
+Navigate to the edit view of an existing Source or create a new one.
 
-The token will be located in the Application configuration object in the code box at the bottom.
+The api key will be located in the Source configuration object in the code box at the bottom.
 
-Intempt expects the access token to be included in all API requests in a header that looks like the following:
+Intempt expects the api key to be included in all API requests in a header that looks like the following:
 
-`Authorization: Bearer <YOUR_ACCESS_TOKEN>`
+`Authorization: ApiKey <YOUR_API_KEY>`
 
 
