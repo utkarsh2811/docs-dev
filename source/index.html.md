@@ -11,7 +11,6 @@ includes:
   - sources
   - collections
   - collection-data
-  - examples
   - errors
   - main-concepts
 
