@@ -8,7 +8,7 @@ toc_footers:
   # - <a href='#'>Sign Up for a Developer Key</a>
 
 includes:
-  - applications
+  - sources
   - collections
   - collection-data
   - examples
@@ -32,8 +32,8 @@ curl "https://api.intempt.com"
   "version": "v1",
   "status": "ok",
   "_links": {
-    "applications": {
-      "href": "https://api.intempt.com/v1/your-org/applications/"
+    "sources": {
+      "href": "https://api.intempt.com/v1/your-org/sources/"
     }
   }
 }
