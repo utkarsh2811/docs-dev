@@ -9,6 +9,7 @@ toc_footers:
 
 includes:
   - sources
+  - sources-data
   - collections
   - collection-data
   - errors
