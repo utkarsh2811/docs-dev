@@ -2,8 +2,6 @@
 
 Source data endpoint allows sending multiple data items to multiple collections in the same http request.
 
-Propeties in request object are names of the collection to save data to, and values are lists of data items with properties corresponding to collection schema.
-
 ```shell
 curl "https://api.intempt.com/v1/your-org/sources/source-id/data"
   -d 
@@ -188,3 +186,4 @@ curl "https://api.intempt.com/v1/your-org/sources/source-id/data"
     }
 }
 ```
+Propeties in request object are names of the collection to save data to, and values are lists of data items with properties corresponding to collection schema.
