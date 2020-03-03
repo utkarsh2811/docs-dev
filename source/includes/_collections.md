@@ -36,7 +36,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
         "schema": {
           "type": "record",
           "name": "booking",
-          "namespace": "customApplication",
+          "namespace": "customSource",
           "fields": [
             {
               "name": "id",
@@ -93,7 +93,7 @@ This call will return an array of collection objects that contain `id`, `sourceI
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`sourceId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Source this collection belongs.
 
 `profile` property shows whether collection is a user profile collection. 
 
@@ -127,7 +127,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id"
   "schema": {
     "type": "record",
     "name": "booking",
-    "namespace": "customApplication",
+    "namespace": "customSource",
     "doc": "Booked room",
     "fields": [
       {
@@ -191,7 +191,7 @@ This call will return a collection object that contains `id`, `sourceId`, `name`
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`sourceId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Source this collection belongs.
 
 `profile` property shows whether collection is a user profile.
 
@@ -213,7 +213,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
     "schema": {
       "type": "record",
       "name": "booking",
-      "namespace": "customApplication",
+      "namespace": "customSource",
       "doc": "Booked room",
       "fields": [
         {
@@ -260,7 +260,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
   "schema": {
     "type": "record",
     "name": "booking",
-    "namespace": "customApplication",
+    "namespace": "customSource",
     "doc": "Booked room",
     "fields": [
       {
@@ -310,7 +310,7 @@ Use this endpoint to create a new collection.
 
 In the ruqest body you will need to specify:
 
-`sourceId` property, which shows to which Application this collection belongs.
+`sourceId` property, which shows to which Source this collection belongs.
 
 `name` - collection name.
 
@@ -331,7 +331,7 @@ If successful, this call will return a collection object that contains `id`, `so
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`sourceId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Source this collection belongs.
 
 `profile` property shows whether collection is a user profile.
 
