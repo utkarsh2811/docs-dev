@@ -18,7 +18,7 @@ Intempt platform collection schemas should comply to [Apache Avro spec](https://
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -112,7 +112,7 @@ In the `_links` object
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections/collection-id"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -245,7 +245,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
       ]
     }'
   -X POST
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -347,7 +347,7 @@ In the `_links` object
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections/194123921"
   -X DELETE
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 This endpoint deletes a specific collection.

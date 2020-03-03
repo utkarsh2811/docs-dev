@@ -6,7 +6,7 @@ Intempt Source represents integration of Intempt with one of supported platforms
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/sources"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -62,7 +62,7 @@ Root `_links` object also has `self` link, as well as `byName` link to fetch a s
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/sources/source-id"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -106,7 +106,7 @@ This call will return a Source object that contains `id`, `name`, `title`, `desc
 ```shell
 curl "https://api.intempt.com/v1/your-org/sources/194123921"
   -X DELETE
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 > Example response:
 

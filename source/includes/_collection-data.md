@@ -8,7 +8,7 @@ Before storing data items, you will need to create a collection with a schema fo
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections/19554189106348032/data"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -84,7 +84,7 @@ The root `_links` object's `self` property points to the list of data items.
 
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-item-id"
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -142,7 +142,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-it
          "roomId": 10
        }'
   -X POST
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 > Example response:
@@ -197,7 +197,7 @@ On successful call, saved data item object will be return in the response.
 ```shell
 curl "https://api.intempt.com/v1/your-org/collections/194123921/data/24663674875432960"
   -X DELETE
-  -H "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
 ```
 
 This endpoint deletes a specific collection data item.
