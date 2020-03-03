@@ -12,7 +12,7 @@ For example, collections can be created for:
 
 After creating a collection, use `collection data` endpoints to store and retrieve actual data items.
 
-Intempt platform collection schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html), and should include a custom `identifier` property, which defines relation with a profile collection.
+Intempt platform collection schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html)
 
 ## Get All Collections
 
@@ -29,7 +29,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
     "collections": [
       {
         "id": 19554189106348032,
-        "appId": 347816547721216,
+        "sourceId": 347816547721216,
         "name": "booking",
         "profile": false,
         "event": false,
@@ -40,10 +40,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
           "fields": [
             {
               "name": "id",
-              "type": "long",
-              "identifier": {
-                "primary": true
-              }
+              "type": "long"
             },
             {
               "name": "bookingDate",
@@ -52,27 +49,11 @@ curl "https://api.intempt.com/v1/your-org/collections"
             },
             {
               "name": "guestId",
-              "type": "long",
-              "identifier": {
-                "relation": {
-                  "identifier": {
-                    "name": "guestId",
-                    "collection": "guest"
-                  }
-                }
-              }
+              "type": "long"
             },
             {
               "name": "roomId",
-              "type": "long",
-              "identifier": {
-                "relation": {
-                  "identifier": {
-                    "name": "roomId",
-                    "collection": "room"
-                  }
-                }
-              }
+              "type": "long"
             }
           ]
         },
@@ -108,11 +89,11 @@ This endpoint retrieves all collections for selected organization.
 
 ### Success Response
 
-This call will return an array of collection objects that contain `id`, `appId`, `name`, `profile`, `event` and `schema` properties, alongside with child `_links` object.
+This call will return an array of collection objects that contain `id`, `sourceId`, `name`, `profile`, `event` and `schema` properties, alongside with child `_links` object.
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`appId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Application this collection belongs.
 
 `profile` property shows whether collection is a user profile collection. 
 
@@ -139,7 +120,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id"
 ```json
 {
   "id": 19554189106348032,
-  "appId": 347816547721216,
+  "sourceId": 347816547721216,
   "name": "booking",
   "profile": false,
   "event": false,
@@ -151,10 +132,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id"
     "fields": [
       {
         "name": "id",
-        "type": "long",
-        "identifier": {
-          "primary": true
-        }
+        "type": "long"
       },
       {
         "name": "dateFrom",
@@ -172,27 +150,11 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id"
       },
       {
         "name": "guestId",
-        "type": "long",
-        "identifier": {
-          "relation": {
-            "identifier": {
-              "name": "guestId",
-              "collection": "guest"
-            }
-          }
-        }
+        "type": "long"
       },
       {
         "name": "roomId",
-        "type": "long",
-        "identifier": {
-          "relation": {
-            "identifier": {
-              "name": "roomId",
-              "collection": "room"
-            }
-          }
-        }
+        "type": "long"
       }
     ]
   },
@@ -225,11 +187,11 @@ ID | The ID of the collection to retrieve
 
 ### Success Response
 
-This call will return a collection object that contains `id`, `appId`, `name`, `profile`, `event` and `schema` properties, alongside with the `_links` object. 
+This call will return a collection object that contains `id`, `sourceId`, `name`, `profile`, `event` and `schema` properties, alongside with the `_links` object. 
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`appId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Application this collection belongs.
 
 `profile` property shows whether collection is a user profile.
 
@@ -246,7 +208,7 @@ In the `_links` object
 curl "https://api.intempt.com/v1/your-org/collections"
   -d 
   '{
-    "appId": 347816547721216,
+    "sourceId": 347816547721216,
     "name": "booking",
     "schema": {
       "type": "record",
@@ -256,10 +218,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
       "fields": [
         {
           "name": "id",
-          "type": "long",
-          "identifier": {
-            "primary": true
-          }
+          "type": "long"
         },
         {
           "name": "dateFrom",
@@ -277,27 +236,11 @@ curl "https://api.intempt.com/v1/your-org/collections"
         },
         {
           "name": "guestId",
-          "type": "long",
-          "identifier": {
-            "relation": {
-              "identifier": {
-                "name": "guestId",
-                "collection": "guest"
-              }
-            }
-          }
+          "type": "long"
         },
         {
           "name": "roomId",
-          "type": "long",
-          "identifier": {
-            "relation": {
-              "identifier": {
-                "name": "roomId",
-                "collection": "room"
-              }
-            }
-          }
+          "type": "long"
         }
       ]
     }'
@@ -310,7 +253,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
 ```json
 {
   "id": 19554189106348032,
-  "appId": 347816547721216,
+  "sourceId": 347816547721216,
   "name": "booking",
   "profile": false,
   "event": false,
@@ -322,10 +265,7 @@ curl "https://api.intempt.com/v1/your-org/collections"
     "fields": [
       {
         "name": "id",
-        "type": "long",
-        "identifier": {
-          "primary": true
-        }
+        "type": "long"
       },
       {
         "name": "dateFrom",
@@ -343,27 +283,11 @@ curl "https://api.intempt.com/v1/your-org/collections"
       },
       {
         "name": "guestId",
-        "type": "long",
-        "identifier": {
-          "relation": {
-            "identifier": {
-              "name": "guestId",
-              "collection": "guest"
-            }
-          }
-        }
+        "type": "long"
       },
       {
         "name": "roomId",
-        "type": "long",
-        "identifier": {
-          "relation": {
-            "identifier": {
-              "name": "roomId",
-              "collection": "room"
-            }
-          }
-        }
+        "type": "long"
       }
     ]
   },
@@ -386,7 +310,7 @@ Use this endpoint to create a new collection.
 
 In the ruqest body you will need to specify:
 
-`appId` property, which shows to which Application this collection belongs.
+`sourceId` property, which shows to which Application this collection belongs.
 
 `name` - collection name.
 
@@ -403,11 +327,11 @@ In the ruqest body you will need to specify:
 
 ### Success Response
 
-If successful, this call will return a collection object that contains `id`, `appId`, `name`, `profile`, `event` and `schema` properties, alongside with the `_links` object. 
+If successful, this call will return a collection object that contains `id`, `sourceId`, `name`, `profile`, `event` and `schema` properties, alongside with the `_links` object. 
 
 `schema` property defines the schema of this collection, all collection data items have to follow this schema.
 
-`appId` property shows to which Application this collection belongs.
+`sourceId` property shows to which Application this collection belongs.
 
 `profile` property shows whether collection is a user profile.
 
