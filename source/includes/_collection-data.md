@@ -134,7 +134,7 @@ In the `_links` object `self` points to the collection data item itself.
 ## Add a collection data item
 
 ```shell
-curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-item-id"
+curl "https://api.intempt.com/v1/your-org/collections/collection-id/data"
   -d '{
          "id": 4,
          "bookingDate": -1,
@@ -178,7 +178,7 @@ Fields that are not present in the collection schema will be ignored.
 
 ### HTTP Request
 
-`POST https://api.intempt.com/v1/your-org/collections/<ID>/data/<DATA-ITEM-ID>`
+`POST https://api.intempt.com/v1/your-org/collections/<ID>/data`
 
 ### URL Parameters
 
