@@ -79,6 +79,10 @@ body {
   border-radius: 0;
 }
 
+.navbar-head {
+  font-size: 20px;
+}
+
 .navbar-brand {
   font-size: 16px !important;
   font-weight: 500 !important;
@@ -99,14 +103,14 @@ body {
   height: 30px !important;
 }
 .navbar a:hover {
-  color: #F42156 !important;
   background-color: transparent !important;
   border-radius: 0 !important;
   border-color: transparent !important;
 }
+
 .navbar-brand:hover {
-  color: #323A45 !important;
 }
+
 .navbar-toggle {
   border: none;
   margin-top: 11px;
