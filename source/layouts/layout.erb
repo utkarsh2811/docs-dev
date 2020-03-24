@@ -51,16 +51,18 @@ under the License.
             <%= image_tag('navbar.png') %>
           </span>
         </a>
-        <a class="navbar-brand flex-grow-1 flex-md-grow-0" href="https://www.intempt.com/">
-          <span class="img-fluid">
-            <%= image_tag "logo-footer.svg", class: 'logo' %>
-          </span>
-        </a>
-        <a class="navbar-brand flex-grow-1 flex-md-grow-0" href="#">
-          <span class="navbar-head">
-            | Platform
-          </span>
-        </a>
+        <div class="navbar-brand flex-grow-1 flex-md-grow-0">
+          <a href="https://www.intempt.com/">
+            <span class="navbar-logo">
+              <%= image_tag "logo-footer.svg", class: 'logo' %>
+            </span>
+          </a>
+          <a href="#">
+            <span class="navbar-head">
+              | Platform
+            </span>
+          </a>
+        </div>
         <ul class="navbar-nav navbar-nav-full mr-auto d-flex">
           <li class="nav-item"><a class="nav-link" href="https://www.intempt.com" target="_blank">Platform</a></li>
           <li class="nav-item"><a class="nav-link" href="https://www.intempt.com/features" target="_blank">Features</a></li>
