@@ -86,6 +86,9 @@ body {
   max-width: 100%;
   height: auto;
 }
+.navbar-link:hover {
+  text-decoration: none;
+}
 
 .navbar-brand {
   font-size: 16px !important;
