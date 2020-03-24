@@ -2,14 +2,14 @@
 
 */
 @font-face {
-  font-family: 'Brandon Grotesque';
+  font-family: "Brandon Regular";
   font-style: normal;
   font-weight: 400;
   src: local('Brandon Regular'), local('Brandon-Regular'), url(fonts/Brandon_reg.otf) format('truetype')
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque';
+  font-family: 'Brandon Regular';
   font-style: normal;
   font-weight: 500;
   src: local('Brandon Med'), local('Brandon-Med'), url(fonts/Brandon_med.otf) format('truetype')
@@ -182,7 +182,7 @@ a.reference.internal.nav-header {
 
 
 .footer-title {
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Regular";
   font-weight: 500;
   color: #333333;
   font-size: 12px;
