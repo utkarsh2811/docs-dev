@@ -49,7 +49,9 @@ curl "https://api.intempt.com/v1/your-org/identifiers"
 }
 ```
 
-This creates an identifier for your collection. Following are the attributes along with their description which are required to create an identifier:
+This creates an identifier for your collection. Identifier schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html) 
+
+Following are the attributes along with their description which are required to create an identifier:
 
 - `collId`
 
@@ -62,14 +64,6 @@ This attribute defines the type of collection with possible values such as `prim
 - `name`
 
 This is used to specify the name of the identifier.
-
-- `namespace`
-
-This holds the value of your identifier's namespace. It is suggested to keep the same namespace value as in the collection.
-
-- `schema`
-
-This attribute defines the schema of this identifier. It has attributes like `type`, `name` `namespace`, and `fields` which defines the type of schema and it must be of value `record`, having a suitable name for your schema, it holds the value of your schema's namespace. It is suggested to keep the same namespace value as in the collection, references to the `name` and `type` of field you choose to be labelled as identifier from the collection fields respectively.
 
 
 ## Add a collection data item
@@ -101,7 +95,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id/data"
   "matches": [],
   "_links": {
     "self": {
-        "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
+        "href": "https://api.intempt.com/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
     }
   }
 }
@@ -155,7 +149,7 @@ curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-it
     "matches": [],
     "_links": {
         "self": {
-            "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
+            "href": "https://api.intempt.com/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
         }
     }
 }
