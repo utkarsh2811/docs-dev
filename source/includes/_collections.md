@@ -10,6 +10,20 @@ For example, collections can be created for:
 - Flight & hotel bookings
 - Certain user actions on a website
 
+On the API end, collections can be of 3 types:
+
+- Profile Collection
+
+A profile collection is used to store information pertaining to the a user profile. For example his `id`, `first_name`, `last_name`, `address` etc. You can define a collection to be profile collection by setting value of `"profile"` attribute to `"true"` and `"event"` to `"false"`.
+
+- Event Collection
+
+An event collection is used to store information about any event. For example flight booking, hotel booking etc. You can define a collection to be event collection by setting value of `"profile"` attribute to `"false"` and `"event"` to `"true"`.
+
+- Attribute Collection
+
+An attribute collection is used to store information about anything which is neither profile nor event. For example, profile can have address as part of profile collection but also address could be separate collection i.e., attribute collection. You can define a collection to be attribute collection by setting value of both `"profile"` and `"event"` attribute to `"false"`.
+
 After creating a collection, use `collection data` endpoints to store and retrieve actual data items.
 
 Intempt platform collection schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html)
@@ -308,13 +322,13 @@ curl "https://api.intempt.com/v1/your-org/collections"
 
 Use this endpoint to create a new collection.
 
-In the ruqest body you will need to specify:
+In the request body you will need to specify:
 
 `sourceId` property, which shows to which Source this collection belongs.
 
 `name` - collection name.
 
-`schema` - defines the schema of this collection, all collection data items have to follow this schema.
+`schema` - defines the schema of this collection, all collection data items have to follow this schema. These schemas are avro schemas and you will not be able to redefine the existing schema. This means that you must create a schema with following set of attributes : they are `type`, `name` and `namespace` which refers to your type of your schema with only possible value as `record`, any suitable name that you might want for your schema and any suitable namespace that you might want for your schema respectively.
 
 `profile` - shows whether collection is a user profile.
 

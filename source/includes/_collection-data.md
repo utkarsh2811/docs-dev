@@ -2,7 +2,188 @@
 
 Collection data endpoint is used to work with data items in a collection.
 
-Before storing data items, you will need to create a collection with a schema for this particular type of data.
+Before storing data items, you will need to create a collection with a schema for this particular type of data. Also, after you create a collection and before you store data items to your collection, your collection must have an identifier. 
+
+## Add Identifier to a collection
+
+```shell
+curl "https://api.intempt.com/v1/your-org/identifiers"
+  -d '{
+        "collId": "93114246020079616",
+        "type": "primary",
+        "name": "profileId",
+        "schema": {
+        "type": "record",
+        "name": "profileId",
+        "namespace": "com.intempt.source.demo",
+          "fields": [
+                      {
+                        "name": "id",
+                        "type": "long"
+                      }
+                    ]
+                  }
+      }'
+  -X POST
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
+```
+
+> Example response:
+
+```json
+{
+"collId": "19554189106348032",
+"type": "primary",
+"name": "profileId",
+"schema": {
+"type": "record",
+"name": "profileId",
+"namespace": "com.intempt.source.demo",
+"fields": [
+  {
+"name": "id",
+"type": "long"
+}
+]
+}
+}
+```
+
+This creates an identifier for your collection. Following are the attributes along with their description which are required to create an identifier:
+
+- `collId`
+
+This is used to specify the collection for which you are going to create the identifier
+
+- `type`
+
+This attribute defines the type of collection with possible values such as `primary` and `referenced`. Primary identifier has a direct relation with the collection's attributes which are listed in identifiers fields whereas referenced identifier references to some other identifier which is of type primary
+
+- `name`
+
+This is used to specify the name of the identifier.
+
+- `namespace`
+
+This holds the value of your identifier's namespace. It is suggested to keep the same namespace value as in the collection.
+
+- `schema`
+
+This attribute defines the schema of this identifier. It has attributes like `type`, `name` `namespace`, and `fields` which defines the type of schema and it must be of value `record`, having a suitable name for your schema, it holds the value of your schema's namespace. It is suggested to keep the same namespace value as in the collection, references to the `name` and `type` of field you choose to be labelled as identifier from the collection fields respectively.
+
+
+## Add a collection data item
+
+```shell
+curl "https://api.intempt.com/v1/your-org/collections/collection-id/data"
+  -d '{
+         "id": 4,
+         "bookingDate": -1,
+         "guestId": 2,
+         "roomId": 10
+       }'
+  -X POST
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
+```
+
+> Example response:
+
+```json
+{
+  "collId": 19554189106348032,
+  "id": 24663674875432960,
+  "data": {
+    "id": 4,
+    "bookingDate": -1,
+    "guestId": 2,
+    "roomId": 10
+  },
+  "matches": [],
+  "_links": {
+    "self": {
+        "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
+    }
+  }
+}
+```
+
+Use this command to add a new data item to a collection: 
+
+- user visited a specific page
+- a new flight booking was created
+- new data received from POS terminal
+
+The data object included in the request body has to match collection schema.
+
+Fields that are not present in the collection schema will be ignored.
+
+### HTTP Request
+
+`POST https://api.intempt.com/v1/your-org/collections/<ID>/data`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the collection to retrieve data from
+DATA-ITEM-ID | The ID of the data item to retrieve
+
+### Success Response
+
+On successful call, saved data item object will be return in the response.
+
+
+## Get a Specific Data Item
+
+```shell
+curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-item-id"
+  -H "Authorization: ApiKey <YOUR_API_KEY>"
+```
+
+> Example response:
+
+```json
+{
+    "collId": 19554189106348032,
+    "id": 24663674875432960,
+    "data": {
+        "id": 4,
+        "bookingDate": -1,
+        "guestId": 2,
+        "roomId": 10
+    },
+    "matches": [],
+    "_links": {
+        "self": {
+            "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
+        }
+    }
+}
+```
+
+This endpoint retrieves a specific data item.
+
+### HTTP Request
+
+`GET https://api.intempt.com/v1/your-org/collections/<ID>/data/<DATA-ITEM-ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the collection to retrieve data from
+DATA-ITEM-ID | The ID of the data item to retrieve
+
+### Success Response
+
+This call will return an array of collection objects that contain `id`, `collId`, `data`, `matches` properties, alongside with child `_links` object.
+
+`collId` property shows which collection this data item belongs to.
+
+`data` is actual data payload.
+
+In the `_links` object `self` points to the collection data item itself.
+
 
 ## Get All Data in a Collection
 
@@ -79,117 +260,6 @@ This call will return an array of collection objects that contain `id`, `collId`
 In the `_links` object `self` points to the collection data item itself.
 
 The root `_links` object's `self` property points to the list of data items.
-
-## Get a Specific Data Item
-
-```shell
-curl "https://api.intempt.com/v1/your-org/collections/collection-id/data/data-item-id"
-  -H "Authorization: ApiKey <YOUR_API_KEY>"
-```
-
-> Example response:
-
-```json
-{
-    "collId": 19554189106348032,
-    "id": 24663674875432960,
-    "data": {
-        "id": 4,
-        "bookingDate": -1,
-        "guestId": 2,
-        "roomId": 10
-    },
-    "matches": [],
-    "_links": {
-        "self": {
-            "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
-        }
-    }
-}
-```
-
-This endpoint retrieves a specific data item.
-
-### HTTP Request
-
-`GET https://api.intempt.com/v1/your-org/collections/<ID>/data/<DATA-ITEM-ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the collection to retrieve data from
-DATA-ITEM-ID | The ID of the data item to retrieve
-
-### Success Response
-
-This call will return an array of collection objects that contain `id`, `collId`, `data`, `matches` properties, alongside with child `_links` object.
-
-`collId` property shows which collection this data item belongs to.
-
-`data` is actual data payload.
-
-In the `_links` object `self` points to the collection data item itself.
-
-## Add a collection data item
-
-```shell
-curl "https://api.intempt.com/v1/your-org/collections/collection-id/data"
-  -d '{
-         "id": 4,
-         "bookingDate": -1,
-         "guestId": 2,
-         "roomId": 10
-       }'
-  -X POST
-  -H "Authorization: ApiKey <YOUR_API_KEY>"
-```
-
-> Example response:
-
-```json
-{
-  "collId": 19554189106348032,
-  "id": 24663674875432960,
-  "data": {
-    "id": 4,
-    "bookingDate": -1,
-    "guestId": 2,
-    "roomId": 10
-  },
-  "matches": [],
-  "_links": {
-    "self": {
-        "href": "http://localhost:8081/v1/intempt-test/collections/19554189106348032/data/24663674875432960"
-    }
-  }
-}
-```
-
-Use this command to add a new data item to a collection: 
-
-- user visited a specific page
-- a new flight booking was created
-- new data received from POS terminal
-
-The data object included in the request body has to match collection schema.
-
-Fields that are not present in the collection schema will be ignored.
-
-### HTTP Request
-
-`POST https://api.intempt.com/v1/your-org/collections/<ID>/data`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the collection to retrieve data from
-DATA-ITEM-ID | The ID of the data item to retrieve
-
-### Success Response
-
-On successful call, saved data item object will be return in the response.
 
 
 ## Delete a Collection data item

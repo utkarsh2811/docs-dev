@@ -1,6 +1,10 @@
 # Sources
 
-Intempt Source represents integration of Intempt with one of supported platforms (Shopify, HubSpot, Magento, POS system, etc.) or client's website/mobile app.
+Intempt Source represents integration of Intempt with one of supported platforms (Shopify, HubSpot, Magento, POS system, etc.) or client's website/mobile app. You can find all the sources listed at `https://app.intempt.com` under `Customer Data Platform` -> `Sources`. Sources can be picked from below listed categories:
+
+1. Intempt Web Tracker - for tracking all data flowing through your website.
+2. API Source - api is just api you define what you send then you send it.
+3. iOS App - for tracking all data flowing through your iOS Application.
 
 ## Get All Sources
 
