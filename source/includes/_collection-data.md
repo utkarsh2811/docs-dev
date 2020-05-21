@@ -59,7 +59,7 @@ This is used to specify the collection for which you are going to create the ide
 
 - `type`
 
-This attribute defines the type of collection with possible values such as `primary` and `referenced`. Primary identifier has a direct relation with the collection's attributes which are listed in identifiers fields whereas referenced identifier references to some other identifier which is of type primary
+This attribute defines the type of collection with possible values such as `primary`, `foreign` and `user`. All three of them must have fields from their respective collection schemas in their own schemas. Primary identifier identifies an object directly from the collection, foreign identifier identifies object from some other collection via a `referenceId` and user identifer is special kind of foreign identifier which stitches multiple profile collection having same attribute value for identifier.
 
 - `name`
 

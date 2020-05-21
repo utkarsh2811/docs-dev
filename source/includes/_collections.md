@@ -328,7 +328,7 @@ In the request body you will need to specify:
 
 `name` - collection name.
 
-`schema` - defines the schema of this collection, all collection data items have to follow this schema. These schemas are avro schemas and you will not be able to redefine the existing schema. This means that you must create a schema with following set of attributes : they are `type`, `name` and `namespace` which refers to your type of your schema with only possible value as `record`, any suitable name that you might want for your schema and any suitable namespace that you might want for your schema respectively.
+`schema` - Intempt platform collection schemas should comply to [Apache Avro spec](https://avro.apache.org/docs/current/spec.html) and the `type` for this schema should be a record.
 
 `profile` - shows whether collection is a user profile.
 
