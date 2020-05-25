@@ -1,8 +1,8 @@
 # Collections
 
-Collections describe schemas for events or data of a certain type, while collection data items represent cpecific pieces of data in that collection.
+Collections describe schemas for events or data of a certain type, while collection data items represent specific pieces of data in that collection. 
 
-To put that in relational terms, collections are tables that describe columns (types,constraints, etc.), and collection data items are rows of values for those columns.
+To put that in relational terms, collections are tables that describe columns (types, constraints, etc.), and collection data items are rows of values for those columns.
 
 For example, collections can be created for:
 
@@ -14,11 +14,11 @@ On the API end, collections can be of 3 types:
 
 - Profile Collection
 
-A profile collection is used to store information pertaining to the a user profile. For example his `id`, `first_name`, `last_name`, `address` etc. You can define a collection to be profile collection by setting value of `"profile"` attribute to `"true"` and `"event"` to `"false"`.
+A profile collection is used to store information pertaining to the a user profile. For example, his `id`, `first_name`, `last_name`, `address` etc. You can define a collection to be profile collection by setting value of `"profile"` attribute to `"true"` and `"event"` to `"false"`.
 
 - Event Collection
 
-An event collection is used to store information about any event. For example flight booking, hotel booking etc. You can define a collection to be event collection by setting value of `"profile"` attribute to `"false"` and `"event"` to `"true"`.
+An event collection is used to store information about any event. For example, flight booking, hotel booking etc. You can define a collection to be event collection by setting value of `"profile"` attribute to `"false"` and `"event"` to `"true"`.
 
 - Attribute Collection
 

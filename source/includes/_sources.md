@@ -4,7 +4,7 @@ Intempt Source represents integration of Intempt with one of supported platforms
 
 1. Intempt Web Tracker - for tracking all data flowing through your website.
 2. iOS App - for tracking all data flowing through your iOS Application.
-2. API Source - for creating collections, relations, identifiers etc. from scratch as they are created by default in other two sources for you. 
+3. API Source - for creating collections, relations, identifiers etc. from scratch as they are created by default in other two sources for you. 
 
 ## Get All Sources
 
