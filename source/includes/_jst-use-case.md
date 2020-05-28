@@ -4,8 +4,9 @@ Following use case includes step-by-step creation of:
 
 1. Source 
 2. Custom Event Collection
-3. Identifiers
-4. data in custom collection
+3. Primary Identifier
+4. Foreign Identifier
+5. Custom Collection Data
 
 
 ## Source Creation
@@ -149,7 +150,8 @@ curl "https://api.intempt.com/v1/OrgABC/collections"
 Once you have saved your source, and placed the respective JS Tracker or iOS Tracker to your webpage or iOS app respectively, we are ready to create our own custom collection. In this example, we shall create a custom collection named `Flight-Booking`. It will be of type [Event](https://dev.intempt.com/#collections).
 
 
-## Identifiers
+## Primary Identifier Creation
+
 
 ```shell
 curl "https://api.intempt.com/v1/OrgABC/collections"
@@ -201,6 +203,10 @@ curl "https://api.intempt.com/v1/OrgABC/collections"
 ```
 
 Here we will create [Primary Identifier](https://dev.intempt.com/#add-identifier-to-a-collection) on newly created custom collection. It is a pre-requisite of posting any data to our custom collection.
+
+
+## Foreign Identifier Creation
+
 
 ```shell
 curl "https://api.intempt.com/v1/OrgABC/collections"
@@ -256,27 +262,26 @@ curl "https://api.intempt.com/v1/OrgABC/collections"
 Now we add an Foreign Profile Identifier on the newly created custom collections. Attribute referenceId will point to the id of primary identifier. This process of creating Identifiers remains same for both iOS and Web Trackers.
 
 
-## Custom Collection Data
+## Custom Collection Data(Web Tracker)
 
 
-### Web Tracker
-
-```shell
+```javascript
 window._intempt['YOUR_TRACKER_NUMBER'].track("flight-booking", {"bookingId": "1", "flightId": "1", "bookingStatus": "booked", "bookingDate": "2020-05-25"})
 ```
 
 > Example response:
 
-```text
-{
+```log
 intempt.min.js:1 [Intempt] Flushing events queue 1
 intempt.min.js:1 [Intempt] Successfully sent batch of event
-}
+
 ```
+
 You can now send data to your collection. A sample is shown. [Click here](https://github.com/intempt/intempt-intemptjs) for information on better understanding on usage of Intempt - JavaScript SDK.
 
 
-### iOS Tracker
+## Custom Collection Data(iOS Tracker)
+
 
 ```swift
 Intempt.track("flight-booking", withProperties: arrayData, error: nil)
@@ -328,4 +333,5 @@ responseDataFromServer------{
 }
 
 ```
+
 You can now send data to your collection. A sample is shown. [Click here](https://github.com/intempt/intempt-ios-sdk) for further information on better understanding on usage of Intempt - iOS SDK.
