@@ -252,9 +252,12 @@ curl "https://api.intempt.com/v1/OrgABC/collections"
     }
 }
 ```
+
 Now we add an Foreign Profile Identifier on the newly created custom collections. Attribute referenceId will point to the id of primary identifier. This process of creating Identifiers remains same for both iOS and Web Trackers.
 
+
 ## Custom Collection Data
+
 
 ### Web Tracker
 
@@ -264,17 +267,18 @@ window._intempt['YOUR_TRACKER_NUMBER'].track("flight-booking", {"bookingId": "1"
 
 > Example response:
 
-```
-
+```text
+{
 intempt.min.js:1 [Intempt] Flushing events queue 1
 intempt.min.js:1 [Intempt] Successfully sent batch of event
-
+}
 ```
 You can now send data to your collection. A sample is shown. [Click here](https://github.com/intempt/intempt-intemptjs) for information on better understanding on usage of Intempt - JavaScript SDK.
 
+
 ### iOS Tracker
 
-```shell
+```swift
 Intempt.track("flight-booking", withProperties: arrayData, error: nil)
    arrayData =      [
                 {       
@@ -288,7 +292,7 @@ Intempt.track("flight-booking", withProperties: arrayData, error: nil)
 
 > Example response:
 
-```
+```text
 
 responseDataFromServer------{
     "_embedded" =     {
