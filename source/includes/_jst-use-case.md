@@ -154,7 +154,7 @@ Once you have saved your source, and placed the respective JS Tracker or iOS Tra
 
 
 ```shell
-curl "https://api.intempt.com/v1/OrgABC/collections"
+curl "https://api.intempt.com/v1/OrgABC/identifiers"
   -d '{
 "collId": "98092788222918656",
 "type": "primary",
@@ -209,7 +209,7 @@ Here we will create [Primary Identifier](https://dev.intempt.com/#add-identifier
 
 
 ```shell
-curl "https://api.intempt.com/v1/OrgABC/collections"
+curl "https://api.intempt.com/v1/OrgABC/identifiers"
   -d '{
 "collId": "98092788222918656",
 "type": "foreign",
