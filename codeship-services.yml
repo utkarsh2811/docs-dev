@@ -4,3 +4,7 @@ build-service:
     dockerfile_path: Dockerfile-build
   encrypted_env_file:
     - env.encrypted
+  
+  docker:
+  image: docker:19.03.7
+  add_docker: true
